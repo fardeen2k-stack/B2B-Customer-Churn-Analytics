@@ -1,3 +1,5 @@
+--Record count Check
+
 SELECT
     'sales_reps' AS table_name,
     COUNT(*) AS total_records
@@ -66,7 +68,7 @@ SELECT
     COUNT(*)
 FROM customer_health;
 
-
+--Check for Duplicate Primary Key
 SELECT
     customer_id,
     COUNT(*)
@@ -74,11 +76,13 @@ FROM customers
 GROUP BY customer_id
 HAVING COUNT(*) > 1;
 
+--Missing company name
 SELECT
     COUNT(*) AS missing_company_name
 FROM customers
 WHERE company_name IS NULL;
 
+--Missing Annual Revenue 
 SELECT
     c.customer_id
 FROM customers c
